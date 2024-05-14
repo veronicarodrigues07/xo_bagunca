@@ -1,0 +1,21 @@
+img  {
+    display: block;
+    margin: 0 auto;
+    width: 1200px;
+}
+button{
+        display: block;
+        margin-top: 30px; /* Aumentei o espaço entre a imagem e o botão */
+        margin: 0 auto; /* Centraliza horizontalmente */
+        padding: 5px 70px;
+        border: none;
+        border-radius: 50px;
+        background-color: #000000;
+        color: #fff;
+        font-size: 30px;
+        cursor: pointer;
+        font-family: "Luciole", sans-serif;
+        font-weight: bold;
+        font-style: italic;
+        text-decoration: underline;
+}   
