@@ -33,11 +33,10 @@ Ao acessar o app o usuário será direcionado para a página inicial, lá ira ap
 * github
 
 ## Fontes consultadas 🛠️
-[gzmel] https://github.com/gzmael/lista-compras
+
 
 ## Autores ✒️
-[veronica] https://github.com/veronicarodrigues07/projeto-array  
 
-![image info](img/foto.png)
+
 
 
