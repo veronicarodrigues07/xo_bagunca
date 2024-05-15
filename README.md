@@ -39,7 +39,7 @@ Ao acessar o app o usuário será direcionado para a página inicial, lá ira ap
 ## Autores ✒️
 - `Alex`
 - `Leonardo`
-- `Julia`
+- `Julia` https://github.com/juliaburque
 - `Veronica`
 
 
