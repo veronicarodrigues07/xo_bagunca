@@ -38,7 +38,7 @@ Ao acessar o app o usuário será direcionado para a página inicial, lá ira ap
 
 ## Autores ✒️
 - `Alex`
-- `Leonardo`
+- `Leonardo` : https://github.com/leoOliveiraBR
 - `Julia`:https://github.com/juliaburque
 - `Veronica` :https://github.com/veronicarodrigues07
 
