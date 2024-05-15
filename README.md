@@ -11,7 +11,7 @@
 
 # Projeto Tcc 🚀 - criando uma solução para o problema
 
-![image info](img/tela.png) 
+![image info](comentario/inicio) 
 
 ## Descrição📝
  O aplicativo "𝗫𝗼 𝗕𝗮𝗴𝘂𝗻𝗰̧𝗮" é uma ferramenta valiosa para famílias que buscam manter a ordem em suas casas e fortalecer seus laços. Ao facilitar a organização do lar, o aplicativo contribui para um ambiente mais tranquilo e harmonioso, onde os membros da família podem se concentrar em compartilhar momentos significativos juntos, em vez de lidar com o estresse da desordem. Além disso, ao incentivar a colaboração e o trabalho em equipe na gestão das tarefas domésticas, o "Xo Bagunça" promove uma maior coesão familiar e um senso de responsabilidade compartilhada, resultando em relações familiares mais saudáveis e felizes.
