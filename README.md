@@ -28,14 +28,15 @@ Ao acessar o app o usuário será direcionado para a página inicial, lá ira ap
  ![image info](video/gif.gif) 
 
  ### Tecnologia utilizadas ⌨️ 
-* Html
-* Css
-* github
+* 𝗛𝗧𝗠𝗟
+* 𝗖𝗦𝗦
+* 𝗚𝗜𝗧𝗛𝗨𝗕
 
 ## Fontes consultadas 🛠️
 
 
 ## Autores ✒️
+
 
 
 
