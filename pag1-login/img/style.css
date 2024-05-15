@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #email,#senha,#nomeUsuario {
     display: block; /* Exibe cada campo em uma linha */
     margin-bottom: 17px; /* Espaçamento entre os campos */
@@ -51,4 +52,59 @@ button{
         font-style: italic;
         text-decoration: underline;
 }  
+=======
+#email,#senha,#nomeUsuario {
+    display: block; /* Exibe cada campo em uma linha */
+    margin-bottom: 17px; /* Espaçamento entre os campos */
+    padding: 12px 20px; /* Espaçamento interno dos campos */
+    border: 2px solid #ccc; /* Borda sólida cinza */
+    border-radius: 50px; /* Arredonda os cantos com 8px */
+    font-size: 23px; /* Tamanho da fonte */
+    width: 110%; /* Largura total dos campos */
+  }
+ 
+  #logo{
+      display: block;
+      margin: 0 auto;
+      width: 37%;
+      height: auto;
+  }
+  #entrar {
+      display: block; /* Exibe o botão em uma linha */
+      margin-top: 20px; /* Espaçamento acima do botão */
+      padding: 16px 100px; /* Espaçamento interno do botão */
+      border: none; /* Remove a borda padrão */
+      border-radius: 50px; /* Arredonda os cantos com 50px (círculo) */
+      background-color: #000000; /* Cor de fundo azul */
+      color: #fff; /* Cor da fonte branca */
+      font-size: 50px; /* Tamanho da fonte */
+      cursor: pointer; /* Indicador de clique do mouse */
+  }
+  .container {
+      width: 300px;
+      margin: 0 auto;
+      padding: 20px;
+  }
+  img  {
+    display: block;
+    margin: 0 auto;
+    width: 1200px;
+}
+button{
+        display: block;
+        margin-top: 30px; /* Aumentei o espaço entre a imagem e o botão */
+        margin: 0 auto; /* Centraliza horizontalmente */
+        padding: 5px 70px;
+        border: none;
+        border-radius: 50px;
+        background-color: #000000;
+        color: #fff;
+        font-size: 30px;
+        cursor: pointer;
+        font-family: "Luciole", sans-serif;
+        font-weight: bold;
+        font-style: italic;
+        text-decoration: underline;
+}  
+>>>>>>> 8650e0463f0a460128a3a62e5cb6e17886225c40
  
