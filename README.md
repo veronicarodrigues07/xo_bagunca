@@ -23,7 +23,8 @@ Esta ferramenta foi desenvolvida para auxiliar os usuários na organização equ
 Ao acessar o app o usuário será direcionado para a página inicial, lá ira aparecer as funções, sendo elas: 
   - `Login`: O usuário terá que colocar seu email e login.
  -  `pin`: Esse campo será utilizado para que o usuario logue pelo pin.
-  - `Esqueceu a senha`: Caso o usuario tenha esqeucido sua senha so basta clicar no 𝗲𝘀𝗾𝘂𝗲𝗰𝗲𝘂 𝘀𝘂𝗮 𝘀𝗲𝗻𝗵𝗮 para que assim seja gerado um código que chegara no email e irá ajuda-lo a recuperar ou criar uma senha nova. 
+  - `Esqueceu a senha`: Caso o usuario tenha esqeucido sua senha so basta clicar no 𝗲𝘀𝗾𝘂𝗲𝗰𝗲𝘂 𝘀𝘂𝗮 𝘀𝗲𝗻𝗵𝗮 para que assim seja gerado um código que chegara no email e irá ajuda-lo a recuperar ou criar uma senha nova.
+ - `SIGA O EXEMPLO NO VIDEO ABAIXO`
  
  ![image info](video/gif.gif) 
 
