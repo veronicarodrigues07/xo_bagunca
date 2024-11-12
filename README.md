@@ -102,9 +102,5 @@ Contribuições são sempre bem-vindas! Para contribuir, siga os passos:
 
 ---
 
-## 📧 Contato
 
-Para dúvidas ou sugestões, entre em contato conosco pelo e-mail: [seuemail@dominio.com](mailto:seuemail@dominio.com).
-
----
 
