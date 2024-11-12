@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site principal</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            color: rgb(17, 11, 11);
+        }
+
+        /* Telas */
+        .main-screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 50px 0;
+            min-height: 100vh;
+        }
+
+        /* Cabeçalho */
+        .header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #fcee21;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .menu-content {
+            position: absolute;
+            top: 40px;
+            left: 0;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .menu-content a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .menu-content a:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Ajuste dos ícones */
+        .stats {
+            display: flex;
+            align-items: center;
+        }
+
+        .stat-bars {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-bar {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+            position: relative;
+        }
+
+        .stats img#avatarImage {
+            width: 40px;
+            height: 40px;
+            margin-right: 20px;
+            border-radius: 50%;
+        }
+
+        .stat-bar span {
+            width: 50px;
+            margin-right: 10px;
+        }
+
+        .bar {
+            width: 200px;
+            height: 25px;
+            background-color: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bar-fill {
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: yellow;
+        }
+
+        .bar-fill.life {
+            background: url('img_principal/corazon.webp') no-repeat left center / contain, red;
+        }
+
+        .bar-fill.xp {
+            background: url('img_principal/estrela.webp') no-repeat left center / contain, blue;
+        }
+
+        .coins {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+        }
+
+        .coins img {
+            width: 20px;
+            height: 20px;
+            margin-left: 5px;
+        }
+
+        /* Colunas */
+        .column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 30%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .column h2 {
+            margin-bottom: 10px;
+            color: rgb(0, 0, 0);
+        }
+
+        .task-list,
+        .rewards {
+            width: 100%;
+            padding: 10px;
+            border-radius: 10px;
+            background-image: url('img_principal/caderno.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: top center;
+            min-height: 400px;
+        }
+
+        .task-item {
+            display: flex;
+            margin: 5px auto 0 auto;
+            justify-content: space-between;
+            padding: 3px;
+            width: 70%;
+            margin: 0 auto;
+            border-bottom: 1px solid #555;
+            color: #000;
+            background-color: rgb(255, 255, 255);
+            height: 35px;
+            font-size: 20px;
+        }
+
+        .task-item:first-child {
+            margin-top: 40px;
+        }
+
+        .task-item button {
+            padding: 4px 8px;
+            font-size: 12px;
+            margin-left: 5px;
+            background-color: yellow;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .task-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1001;
+            color: #000;
+        }
+
+        .task-popup input,
+        .task-popup select {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .task-popup button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+            background-color: #086e7d;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Overlay */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        /* Botão Adicionar Tarefa */
+        #addTaskBtn {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #086e7d;
+            color: rgb(241, 237, 237);
+            border: none;
+            border-radius: 1000px;
+            cursor: pointer;
+            margin-left: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        #addTaskBtn:hover {
+            background-color: #0b3a55;
+        }
+
+        .rewards-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* Ajuste do botão do menu */
+        #menuToggle {
+            font-size: 24px;
+            padding: 10px 15px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            color: #fff;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .column {
+                width: 90%;
+            }
+
+            .header-content {
+                flex-direction: column;
+            }
+
+            .menu {
+                margin-bottom: 10px;
+            }
+
+            .stats {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .stat-bars {
+                margin-bottom: 10px;
+            }
+
+            .coins {
+                margin-top: 10px;
+            }
+        }
+
+        /* Novo estilo para os itens de recompensa */
+        .reward-item {
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            background-color: #f8f8f8;
+            margin-bottom: 20px;
+        }
+
+        .reward-item img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .reward-item h3 {
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .reward-item p {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .reward-item button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #086e7d;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: rgb(255, 254, 254);
+        }
+
+        .reward-item button:hover {
+            background-color: #FFDF7F;
+        }
+
+        .luckiest-guy-regular {
+            font-family: "Luckiest Guy", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'fonteFODA';
+            src: url('fonte/Best_Sugar.otf') format('opentype'),
+                url('fonte/Best_Sugar.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="menu">
+                <button id="menuToggle">☰</button>
+                <div class="menu-content" id="menuContent">
+                    <a href="#">Home</a>
+                    <a href="#">Tasks</a>
+                    <a href="#">Rewards</a>
+                    <a href="#">Settings</a>
+                </div>
+            </div>
+            <div class="stats">
+                <img id="avatarImage" src="img_principal/avatar.png" alt="Avatar">
+                <div class="stat-bars">
+                    <div class="stat-bar">
+                        <span>Vida</span>
+                        <div class="bar">
+                            <div class="bar-fill life" style="width: 60%;"></div>
+                        </div>
+                    </div>
+                    <div class="stat-bar">
+                        <span>XP</span>
+                        <div class="bar">
+                            <div class="bar-fill xp" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <div class="coins">
+                        <img src="img_principal/coin.png" alt="Coin">
+                        <span>50</span>
+                    </div>
+                </div>
+            </div>
+            <button id="addTaskBtn">Adicionar Tarefa</button>
+        </div>
+    </div>
+
+    <div class="main-screen">
+        <div class="column task-list">
+            <h2>Tarefas</h2>
+            <div class="task-item">
+                Tarefa 1
+                <button>Concluir</button>
+            </div>
+            <div class="task-item">
+                Tarefa 2
+                <button>Concluir</button>
+            </div>
+        </div>
+
+        <div class="column rewards-section">
+            <h2>Recompensas</h2>
+            <div class="reward-item">
+                <img src="img_principal/reward1.png" alt="Recompensa 1">
+                <h3>Recompensa 1</h3>
+                <p>Descrição da recompensa 1.</p>
+                <button>Resgatar</button>
+            </div>
+            <div class="reward-item">
+                <img src="img_principal/reward2.png" alt="Recompensa 2">
+                <h3>Recompensa 2</h3>
+                <p>Descrição da recompensa 2.</p>
+                <button>Resgatar</button>
+            </div>
+        </div>
+
+        <div class="column">
+            <h2>Outra Seção</h2>
+            <!-- Conteúdo adicional -->
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="task-popup" id="taskPopup">
+        <h2>Adicionar Tarefa</h2>
+        <input type="text" placeholder="Nome da Tarefa">
+        <select>
+            <option value="todo">A Fazer</option>
+            <option value="inProgress">Em Progresso</option>
+            <option value="done">Concluída</option>
+        </select>
+        <button id="saveTaskBtn">Salvar</button>
+    </div>
+
+    <script>
+        // Script para o menu
+        const menuToggle = document.getElementById('menuToggle');
+        const menuContent = document.getElementById('menuContent');
+        const overlay = document.getElementById('overlay');
+        const taskPopup = document.getElementById('taskPopup');
+        const addTaskBtn = document.getElementById('addTaskBtn');
+        const saveTaskBtn = document.getElementById('saveTaskBtn');
+
+        menuToggle.addEventListener('click', () => {
+            menuContent.style.display = menuContent.style.display === 'none' || menuContent.style.display === '' ? 'block' : 'none';
+        });
+
+        overlay.addEventListener('click', () => {
+            taskPopup.style.display = 'none';
+            overlay.style.display = 'none';
+        });
+
+        addTaskBtn.addEventListener('click', () => {
+            taskPopup.style.display = 'block';
+            overlay.style.display = 'block';
+        });
+
+        saveTaskBtn.addEventListener('click', () => {
+            taskPopup.style.display = 'none';
+            overlay.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
